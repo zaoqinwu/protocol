@@ -1,0 +1,14 @@
+#server:
+#  port: 8090
+#  bind_port:9876
+#  netty:
+#    boss_group_thread_count:2
+#    worker_group_thread_count:8
+server:
+  bind_address: 0.0.0.0
+  bind_port: 9876
+  netty:
+    #不进行内存泄露的检测
+    boss_group_thread_count: 1
+    worker_group_thread_count: 12
+  port: 8090
