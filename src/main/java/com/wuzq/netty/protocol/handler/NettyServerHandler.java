@@ -49,6 +49,9 @@ public class NettyServerHandler extends SimpleChannelInboundHandler<Object> {
     }
 
 
+    /**
+     * 业务逻辑处理
+     */
     @Override
     public void channelRead0(ChannelHandlerContext ctx, Object msg)  {
         if (msg instanceof Business){

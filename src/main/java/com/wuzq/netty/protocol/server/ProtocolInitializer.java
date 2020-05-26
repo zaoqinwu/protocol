@@ -15,8 +15,9 @@ import java.util.concurrent.TimeUnit;
  * @description protocol
  */
 public class ProtocolInitializer extends ChannelInitializer<SocketChannel> {
+
+    //     protobuf 序列化
     //       ph.addLast(new IdleStateHandler(0, 4, 0, TimeUnit.SECONDS));
-    //
     //        ph.addLast(new ProtobufVarint32FrameDecoder());
     //        ph.addLast(new ProtobufDecoder(UserMsg.User.getDefaultInstance()));
     //        ph.addLast(new ProtobufVarint32LengthFieldPrepender());
@@ -24,7 +25,7 @@ public class ProtocolInitializer extends ChannelInitializer<SocketChannel> {
     @Override
     protected void initChannel(SocketChannel ch) {
         ChannelPipeline cp = ch.pipeline();
-     cp.addLast(new IdleStateHandler(60,0,0, TimeUnit.SECONDS));
+        cp.addLast(new IdleStateHandler(60,0,0, TimeUnit.SECONDS));
         cp.addLast(new NettyServerHandler());
     }
 }
